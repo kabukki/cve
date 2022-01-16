@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
 
 import { Home } from '../Home';
 import { Vulnerability } from '../Vulnerability';
@@ -15,6 +15,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cve/:id" element={<Vulnerability />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   )
